@@ -1,0 +1,22 @@
+<div class="form-edit">
+  <form id="edit-form" action="?page=edit&id=<?php echo $this->escape($this->id); ?>" method="POST" enctype="application/x-www-form-urlencoded">
+    <table class="table">
+      <tr>
+        <td style="width: 25%">
+          Наименование
+        </td>
+        <td>
+          <input type="text" name="name" value="<?php echo $this->escape($this->name); ?>" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" id="submit" value="Submit" />
+          <?php if($this->hide):?>
+            <input type="button" id="hide" value="Hide" />
+          <?php endif;?>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

@@ -1,0 +1,35 @@
+<a class="new edit-action" href="/?page=edit">Создать</a>
+<?php if($this->data !== null):?>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>
+          #
+        </td>
+        <td>
+          Наименование
+        </td>
+        <td style="width: 25%;">
+          Действия
+        </td>
+      </tr>
+    </thead>
+    <?php foreach($this->data as $key => $value):?>
+      <tr>
+        <td>
+          <?php echo $this->escape($key + 1);?>
+        </td>
+        <td>
+          <?php echo $this->escape($value['name']);?>
+        </td>
+        <td>
+          <a href="/?page=edit&id=<?php echo $this->escape($value['id']); ?>" class="edit edit-action">Редактировать</a>
+          <a href="/?page=delete&id=<?php echo $this->escape($value['id']); ?>" class="delete delete-action">Удалить</a>
+        </td>
+      </tr>
+    <?php endforeach;?>
+  </table>
+  <a class="new edit-action" href="/?page=edit">Создать</a>
+<?php else:?>
+  <div class="empty">Не найдено ни одной записи</div>
+<?php endif;?>
